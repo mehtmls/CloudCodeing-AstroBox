@@ -1,0 +1,61 @@
+{
+  "item": {
+    "id": "com.ttl.cloud.codeing",
+    "restype": "quick_app",
+    "name": "CloudCodeing",
+    "description": "## 一个能够在手环上运行未编译的源码的工具\n\n资源里预装了两个示例\n\n一个是动态插入的；\n一个是预先编译的\n``` html\n<template>\n  <div class=\"card\">\n    <div style=\"height:65px\"></div>\n    <block>\n      <text class=\"title\" if=\"{{message !== 'b'}}\">动态渲染测试</text>\n      <text class=\"title\" else>b</text>\n    </block>\n    <div class=\"content\" style=\"background-color: #eeeeee; padding: 3px;\">\n      <text style=\"font-size: {{size}}0px;color:#000\">{{message}}</text>\n    </div>\n    <input type=\"button\" value=\"{{message !== 'b' ? '点击触发事件' : 'b'}}\" class=\"btn\" onclick=\"handleClick('你好')\">\n    </input>\n  </div>\n</template>\n<script>\n  import prompt from '@system.prompt'\n  const test = 'hi'\n\n  export default {\n    private:{\n      message:'这是一个通过自定义解析器生成的节点。',\n      size: 2\n    },\n    handleClick() {\n      if (this.message === 'b') {\n        prompt.showToast({\n          message: \"b\"\n        })\n      } else {\n        prompt.showToast({\n          message: \"HelloWorld\"\n        })\n        this.message = 'b'\n        this.size = 6\n      }\n    }\n  }\n</script>\n<style>\n  .card {\n    flex-direction: column;\n    padding: 4px;\n    background-color: #ffffff;\n  }\n  .title {\n    font-size: 27px;\n    font-weight: bold;\n    color: #333333;\n    margin-bottom:20px; \n  }\n  .btn {\n    margin-top: 20px;\n    font-size: 17px;\n    width: 100%;\n    background-color:#007dff;\n    color: #ffffff;\n  }\n</style>\n```\n> 以上代码均能在Github中找到\n\n另外，你也可以透过网桥进行下载代码执行",
+    "preview": [
+      "media/头图 - CloudCodeing.png",
+      "media/MiBand10-2026-08-28-14-51-17.png",
+      "media/MiBand10-2026-08-28-14-58-36.png"
+    ],
+    "icon": "media/logo-modified (1).png",
+    "cover": "media/头图 - CloudCodeing.png",
+    "author": [
+      {
+        "name": "ttl",
+        "bindABAccount": true
+      }
+    ]
+  },
+  "links": [
+    {
+      "title": "查看能OTA的文件列表，欢迎PR",
+      "url": "https://github.com/mehtmls/UX_online_code/",
+      "icon": "GithubLogo"
+    },
+    {
+      "title": "入群提问/闲聊",
+      "url": "https://qm.qq.com/q/hgconn3NIs",
+      "icon": "Chats"
+    }
+  ],
+  "downloads": {
+    "xmb10": {
+      "version": "1.0.0",
+      "file_name": "downloads/com.ttl.cloud.codeing.release.1.0.0.rpk"
+    },
+    "xmb10nfc": {
+      "version": "1.0.0",
+      "file_name": "downloads/com.ttl.cloud.codeing.release.1.0.0.rpk"
+    },
+    "xmb9": {
+      "version": "1.0.0",
+      "file_name": "downloads/com.ttl.cloud.codeing.release.1.0.0.rpk"
+    },
+    "xmb9p": {
+      "version": "1.0.0",
+      "file_name": "downloads/com.ttl.cloud.codeing.release.1.0.0.rpk"
+    }
+  },
+  "ext": {
+    "bundledResources": {
+      "required": [
+        {
+          "type": "plugin",
+          "name": "网桥 FetchBridge"
+        }
+      ]
+    }
+  }
+}
